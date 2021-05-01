@@ -21,3 +21,6 @@ router.get("/", (request, response,next) => {
     console.log("Hi");
     response.status(200).send("selam");
 });
+
+// Export this router object
+module.exports = router;
