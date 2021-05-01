@@ -68,9 +68,6 @@ const APPS = "100000";
 
 /* CONFIGURATIONS */
 
-const LIMIT = "400";
-// search in 400 apps
-
 const CONTENT_TYPE = "application/json";
 
 var CATEGORY = GAMES; 
@@ -79,7 +76,7 @@ var CATEGORY = GAMES;
 // assigned games by default to avoid null, but will be changed
 
 
-router.get("/:choice", (request, response,next) => {
+router.post("/:choice", (request, response,next) => {
 
     // First get the choice, whether the user wants 
     // applications or games
@@ -102,16 +99,44 @@ router.get("/:choice", (request, response,next) => {
         return response.status(BAD_REQUEST).send("Charts of ONLY Apps or Games can be desired. Please enter a valid choice.");
     }
 
+    /*
+        get the request parameters
+    */
+    
+    var TIME_THRESHOLD = parseInt(request.body.timeThreshold);
+    if(!TIME_THRESHOLD){
+        // default is April 1st, if not given
+        TIME_THRESHOLD = 1616630401000;
+    }
+
+    var COUNTRY = request.body.country;
+    if(!COUNTRY){
+        // defaut is US, if not given
+        COUNTRY = "US";
+    }
+    
+    var LIMIT = request.body.limit;
+    if(!LIMIT){
+        // default is 500, if not given
+        LIMIT = 500;
+    }
+
+    var MARKET = request.body.platform;
+    if(!MARKET){
+        // default is ios, if not given
+        MARKET = IOS;
+    }
+
     // Get the date of today in the desired format
     let TODAY = today();
 
-    MARKET = "ios";
-    COUNTRY = "US";
-    TODAY = "2021-04-30";
-    let TIME_THRESHOLD = 1616630401000;
+   
+    //TODAY = "2021-04-30";
+    console.log("YENI TODAY" + TODAY);
 
     // Create the request body data
     // will be in JSON
+    console.log("KATEGORI DURUMU, ", CATEGORY);
     var requestBodyJSON = requestBody(TODAY, COUNTRY, MARKET, CATEGORY, LIMIT);
     
      /* NOW MAKE THE HTTP REQUEST TO APP ANNIE API */
