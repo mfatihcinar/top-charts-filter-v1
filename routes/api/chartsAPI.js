@@ -11,6 +11,12 @@ const express = require("express");
 const app = express();
 // create an express instance
 
+// use body parser
+// will be used for parsing the http request for getting the charts
+const bodyParser = require("body-parser");
+// relate this body parser to the express server
+app.use(bodyParser.urlencoded({extended: false}));
+
 
 const router = express.Router();
 
