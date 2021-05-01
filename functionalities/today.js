@@ -7,14 +7,14 @@
 // Require dateformat because we want to format the date
 const dateFormat = require('dateformat');
 
-// var day=dateFormat(new Date(), "yyyy-mm-dd h:MM:ss");
 
 function today(){
 
-    let now = Date.now();
-    // time of this very second in miliseconds
+    let yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000); // in ms
+    // today's information might not be on the website
+    // so we calculate yesterday for today actually
 
-    let formatted = dateFormat(now, "yyyy-mm-dd");
+    let formatted = dateFormat(yesterday, "yyyy-mm-dd");
     // the date of today in the desired format
 
     return formatted;
