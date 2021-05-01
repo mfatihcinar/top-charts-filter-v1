@@ -101,7 +101,24 @@ router.get("/:choice", (request, response,next) => {
     // will be in JSON
     var requestBodyJSON = requestBody(TODAY, COUNTRY, MARKET, CATEGORY, LIMIT);
     
+     /* NOW MAKE THE HTTP REQUEST TO APP ANNIE API */
+
+    axios({
+        method: "POST",
+        url: theURL,
+        headers: {
+          "content-type": CONTENT_TYPE,
+          "cookie": COOKIE,
+          "origin": ORIGIN
+        },
+        data: requestBodyJSON,
+    })
+    .then(result => {
+        
     
+        
+    })
+
    
 
     
