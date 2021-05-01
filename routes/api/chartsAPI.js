@@ -32,6 +32,10 @@ const ORIGIN = require("../../data/origin");
 // Import requestBody function to create request body with desired paramters
 let requestBody = require("./requestBody");
 
+// Import Address of the API
+// i.e. URL
+const theURL = require("../../data/URL");
+
 /* CONSTANTS */
 
 const ANDROID = "android";
