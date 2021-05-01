@@ -19,6 +19,8 @@ const router = express.Router();
 
 // Get the cookie from the data folder, we will use it in http request
 const COOKIE = require("../../data/cookie");
+// Get the origin information from the data folder, we will use it in http request
+const ORIGIN = require("../../data/origin");
 
 
 router.get("/", (request, response,next) => {
