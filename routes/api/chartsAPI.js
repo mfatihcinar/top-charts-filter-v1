@@ -50,6 +50,10 @@ const parseResponseIntoObjects = require("../../functionalities/parseResponseInt
 // for filtering products based on recency
 const filteredProductsBasedOnRecency = require("../../functionalities/filterProductsBasedOnRecency");
 
+// Import filter function that filters
+// games from apps
+const filterGamesFromApps = require("../../functionalities/filterGamesFromApps");
+
 /* CONSTANTS */
 
 const ANDROID = "android";
@@ -138,9 +142,19 @@ router.get("/:choice", (request, response,next) => {
         var recentProducts = filteredProductsBasedOnRecency(allProducts, TIME_THRESHOLD);
         // now they are filtered based on recency
 
-        
+        /*
+            ONE MORE THING
+            If the desired choice is APPS, 
+            filter games from apps
+        */
 
-        return response.status(200).send(recentProducts);
+        recentProducts = filterGamesFromApps(recentProducts, CHOICE);
+        // if your choice is games, it won't do anything.
+
+        /* RETURN YOUR RESULTS */
+
+        const SUCCESS = 200;
+        return response.status(SUCCESS).send(recentProducts);
       
     })
     .catch(error => {
