@@ -42,6 +42,10 @@ const today = require("../../functionalities/today");
 // Import Axios modules for making HTTP Requests to AppAnnie API
 const axios = require("axios");
 
+// Import parseResponseIntoObjects function
+// for parsing the http response into products array
+const parseResponseIntoObjects = require("../../functionalities/parseResponseIntoObjects");
+
 /* CONSTANTS */
 
 const ANDROID = "android";
@@ -115,8 +119,7 @@ router.get("/:choice", (request, response,next) => {
     })
     .then(result => {
         
-    
-        
+      
     })
     .catch(error => {
         /* in case of we could not reach the api */
@@ -126,10 +129,7 @@ router.get("/:choice", (request, response,next) => {
           
     });
 
-   
 
-    
-    response.status(200).send("selam");
 });
 
 // Export this router object
