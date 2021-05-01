@@ -12,4 +12,8 @@ const app = express();
 // create an express instance
 
 
+const router = express.Router();
+
+// THERE IS NO VIEW 
+// BECAUSE THIS ROUTER / SERVER DOES NOT SERVE HTML PAGE
 
