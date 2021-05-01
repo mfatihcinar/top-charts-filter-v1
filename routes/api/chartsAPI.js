@@ -55,7 +55,10 @@ const LIMIT = "400";
 
 const CONTENT_TYPE = "application/json";
 
-
+var CATEGORY = GAMES; 
+// this will be category, whether Game or Apps
+// it will contain category id
+// assigned games by default to avoid null, but will be changed
 
 
 router.get("/:choice", (request, response,next) => {
@@ -66,9 +69,22 @@ router.get("/:choice", (request, response,next) => {
     let CHOICE = request.params.choice;
     // choice can be games, or apps, otherwise send 400
 
+    if(CHOICE === "games"){
+        CATEGORY = GAMES;
+    }
+    else if(CHOICE === "apps"){
+        CATEGORY = APPS;
+    }
+    else{
+        /*
+            send bad request to the user
+            because choice can be either games or apps
+        */
+        const BAD_REQUEST = 400;
+        return response.status(BAD_REQUEST).send("Charts of ONLY Apps or Games can be desired. Please enter a valid choice.");
+    }
 
-
-    console.log("Hi");
+    
     response.status(200).send("selam");
 });
 
