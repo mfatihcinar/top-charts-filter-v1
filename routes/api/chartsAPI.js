@@ -32,6 +32,9 @@ const ORIGIN = require("../../data/origin");
 // Import requestBody function to create request body with desired paramters
 let requestBody = require("./requestBody");
 
+const ANDROID = "android";
+
+const IOS = "ios";
 
 
 router.get("/", (request, response,next) => {
