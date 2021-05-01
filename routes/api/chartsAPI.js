@@ -32,12 +32,22 @@ const ORIGIN = require("../../data/origin");
 // Import requestBody function to create request body with desired paramters
 let requestBody = require("./requestBody");
 
+/* CONSTANTS */
+
 const ANDROID = "android";
 
 const IOS = "ios";
 
+/* CONFIGURATIONS */
+
+const LIMIT = "400";
+// search in 400 apps
+
 
 router.get("/", (request, response,next) => {
+
+
+
     console.log("Hi");
     response.status(200).send("selam");
 });
