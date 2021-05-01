@@ -92,8 +92,17 @@ router.get("/:choice", (request, response,next) => {
 
     // Get the date of today in the desired format
     let TODAY = today();
-    
 
+    MARKET = "ios";
+    COUNTRY = "US";
+    TODAY = "2021-04-30";
+
+    // Create the request body data
+    // will be in JSON
+    var requestBodyJSON = requestBody(TODAY, COUNTRY, MARKET, CATEGORY, LIMIT);
+    
+    
+   
 
     
     response.status(200).send("selam");
