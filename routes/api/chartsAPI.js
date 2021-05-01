@@ -50,7 +50,13 @@ const LIMIT = "400";
 const CONTENT_TYPE = "application/json";
 
 
-router.get("/", (request, response,next) => {
+router.get("/:choice", (request, response,next) => {
+
+    // First get the choice, whether the user wants 
+    // applications or games
+    // it changes everything
+    let CHOICE = request.params.choice;
+    // choice can be games, or apps, otherwise send 400
 
 
 
