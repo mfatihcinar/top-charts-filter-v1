@@ -42,12 +42,20 @@ const ANDROID = "android";
 
 const IOS = "ios";
 
+const GAMES = "100001";
+// category id for games
+
+const APPS = "100000";
+// category id for all categories
+
 /* CONFIGURATIONS */
 
 const LIMIT = "400";
 // search in 400 apps
 
 const CONTENT_TYPE = "application/json";
+
+
 
 
 router.get("/:choice", (request, response,next) => {
