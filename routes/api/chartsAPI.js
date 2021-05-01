@@ -17,3 +17,7 @@ const router = express.Router();
 // THERE IS NO VIEW 
 // BECAUSE THIS ROUTER / SERVER DOES NOT SERVE HTML PAGE
 
+router.get("/", (request, response,next) => {
+    console.log("Hi");
+    response.status(200).send("selam");
+});
