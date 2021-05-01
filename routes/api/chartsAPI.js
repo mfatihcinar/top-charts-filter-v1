@@ -46,6 +46,10 @@ const axios = require("axios");
 // for parsing the http response into products array
 const parseResponseIntoObjects = require("../../functionalities/parseResponseIntoObjects");
 
+// Import filter function
+// for filtering products based on recency
+const filteredProductsBasedOnRecency = require("../../functionalities/filterProductsBasedOnRecency");
+
 /* CONSTANTS */
 
 const ANDROID = "android";
@@ -100,6 +104,7 @@ router.get("/:choice", (request, response,next) => {
     MARKET = "ios";
     COUNTRY = "US";
     TODAY = "2021-04-30";
+    let TIME_THRESHOLD = 1616630401000;
 
     // Create the request body data
     // will be in JSON
@@ -118,7 +123,24 @@ router.get("/:choice", (request, response,next) => {
         data: requestBodyJSON,
     })
     .then(result => {
+        /*
+            first take this http response,
+            and parse it into Products array
+        */
+        var allProducts = parseResponseIntoObjects(result);
+        // array of "product" objects
         
+        /*
+            Now filter these products in terms of first_release_date
+            we want recent apps / games
+        */
+        
+        var recentProducts = filteredProductsBasedOnRecency(allProducts, TIME_THRESHOLD);
+        // now they are filtered based on recency
+
+        
+
+        return response.status(200).send(recentProducts);
       
     })
     .catch(error => {
