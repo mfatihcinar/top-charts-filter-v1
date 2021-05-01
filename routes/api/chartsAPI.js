@@ -23,6 +23,11 @@ const COOKIE = require("../../data/cookie");
 const ORIGIN = require("../../data/origin");
 
 
+// Import requestBody function to create request body with desired paramters
+let requestBody = require("./requestBody");
+
+
+
 router.get("/", (request, response,next) => {
     console.log("Hi");
     response.status(200).send("selam");
