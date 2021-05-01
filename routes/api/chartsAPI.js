@@ -17,6 +17,10 @@ const router = express.Router();
 // THERE IS NO VIEW 
 // BECAUSE THIS ROUTER / SERVER DOES NOT SERVE HTML PAGE
 
+// Get the cookie from the data folder, we will use it in http request
+const COOKIE = require("../../data/cookie");
+
+
 router.get("/", (request, response,next) => {
     console.log("Hi");
     response.status(200).send("selam");
