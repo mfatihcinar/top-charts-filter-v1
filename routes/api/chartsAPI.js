@@ -88,6 +88,11 @@ router.get("/:choice", (request, response,next) => {
         return response.status(BAD_REQUEST).send("Charts of ONLY Apps or Games can be desired. Please enter a valid choice.");
     }
 
+    // Get the date of today in the desired format
+    let TODAY = today();
+    
+    
+
     
     response.status(200).send("selam");
 });
