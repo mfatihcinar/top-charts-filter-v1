@@ -118,6 +118,13 @@ router.get("/:choice", (request, response,next) => {
     
         
     })
+    .catch(error => {
+        /* in case of we could not reach the api */
+        const SERVER_ERROR = 500;
+        console.error("error in http request to app annie api", error);
+        response.status(SERVER_ERROR).send("Could not reach to the App Annie API");
+          
+    });
 
    
 
