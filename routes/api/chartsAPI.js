@@ -43,6 +43,8 @@ const IOS = "ios";
 const LIMIT = "400";
 // search in 400 apps
 
+const CONTENT_TYPE = "application/json";
+
 
 router.get("/", (request, response,next) => {
 
