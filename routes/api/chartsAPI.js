@@ -36,6 +36,10 @@ let requestBody = require("./requestBody");
 // i.e. URL
 const theURL = require("../../data/URL");
 
+// Import today function to get the date of the today in formatted way
+const today = require("../../functionalities/today");
+
+
 /* CONSTANTS */
 
 const ANDROID = "android";
