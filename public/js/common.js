@@ -22,8 +22,8 @@ function createProductHTML(product){
     let datePublished = new Date(product.firstReleaseDate);
 
     let month = datePublished.getMonth(); // get month data
-    let day = datePublish.getDay(); // get day data
-    let year = datePublish.getFullYear(); // get year data
+    let day = datePublished.getDay(); // get day data
+    let year = datePublished.getFullYear(); // get year data
 
     let dateString = `${year}-${month}-${day}`;
     // this is the desired format for rendering
