@@ -37,7 +37,7 @@ const server = app.listen(process.env.PORT || PORT, () => {
 app.get("/", (request, response, next) => {
 
     const OKAY = 200;
-    response.status(OKAY).send("Server is ON! :)");
+    response.redirect("/charts");
 }); 
 
 app.get("/charts", (request, response, next) => {
