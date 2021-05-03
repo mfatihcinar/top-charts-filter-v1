@@ -24,13 +24,13 @@ head
         option(value='US') US
         option(value='UK') UK
         option(value='AU') AU
-      select#selectMarket.form-select.form-select-lg.mb-3.mt-3(name='Market')
+      select#selectMarket.form-select.form-select-lg.mb-3(name='Market')
         option(value='ios') Apple App Store
         option(value='android') Google Play Store
-      select#selectType.form-select.form-select-lg.mb-3.mt-3(name='Type')
+      select#selectType.form-select.form-select-lg.mb-3(name='Type')
         option(value='games') Games
         option(value='apps') Apps
-      select#timeThreshold.form-select.form-select-lg.mb-3.mt-3(name='TimeThreshold')
+      select#timeThreshold.form-select.form-select-lg.mb-3(name='TimeThreshold')
         option(value='3') last week
         option(value='0.5') last 15 days
         option(value='1') last month
@@ -38,7 +38,7 @@ head
         option(value='3') last 3 months
         option(value='3') last 6 months
         option(value='3') last year
-      input(type='number', name='limit', placeholder='Limit', required='')
+      input.mb-3(type='number', name='limit', placeholder='Limit', required='')
       input(type='submit', value='Load Charts')
   .container.applicationsContainer
     
