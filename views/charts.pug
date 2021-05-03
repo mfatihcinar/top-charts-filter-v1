@@ -20,17 +20,17 @@ head
   .container.loginContainer
     h2 Summon Rocket Charts!
     form#summonChartsForm(method='post', onsubmit='getCharts();')
-      select#selectCountry.form-select(name='Country', aria-label='.form-select-lg example')
+      select#selectCountry.form-select.form-select-lg.mb-3.mt-3(name='Country', aria-label='.form-select-lg example')
         option(value='US') US
         option(value='UK') UK
         option(value='AU') AU
-      select#selectMarket(name='Market')
+      select#selectMarket.form-select.form-select-lg.mb-3.mt-3(name='Market')
         option(value='ios') Apple App Store
         option(value='android') Google Play Store
-      select#selectType(name='Type')
+      select#selectType.form-select.form-select-lg.mb-3.mt-3(name='Type')
         option(value='games') Games
         option(value='apps') Apps
-      select#timeThreshold(name='TimeThreshold')
+      select#timeThreshold.form-select.form-select-lg.mb-3.mt-3(name='TimeThreshold')
         option(value='3') last week
         option(value='0.5') last 15 days
         option(value='1') last month
@@ -38,7 +38,7 @@ head
         option(value='3') last 3 months
         option(value='3') last 6 months
         option(value='3') last year
-      select.form-select.form-select-lg.mb-3(aria-label='.form-select-lg example')
+      select.form-select.form-select-lg.mb-3(aria-label='.form-select-lg')
         option(selected='') Open this select menu
         option(value='1') One
         option(value='2') Two
