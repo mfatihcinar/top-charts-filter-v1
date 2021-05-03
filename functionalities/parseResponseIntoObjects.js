@@ -38,7 +38,17 @@ const parseResponseIntoObjects = function(results){
         var productCategoryID = allInformationRaw.product_id[productID].category_id;
         var productPublisherID = allInformationRaw.product_id[productID].publisher_id;
         var productCompanyID = allInformationRaw.product_id[productID].company_id;
-        var productPublisherName = allInformationRaw.publisher_id[productPublisherID].name;
+       
+        var productPublisherName; // it might be null
+        try {
+            productPublisherName =
+            allInformationRaw.publisher_id 
+                && allInformationRaw.publisher_id[productPublisherID].name;
+          } catch (exception) {
+            productPublisherName = "no name";
+          }
+        //var productPublisherName = allInformationRaw.publisher_id[productPublisherID].name;
+        
         
         // Create PRODUCT Object based on the information you have
         var product = 
