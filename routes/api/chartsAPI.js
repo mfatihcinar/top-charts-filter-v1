@@ -119,8 +119,13 @@ router.post("/", (request, response,next) => {
     
     var LIMIT = request.body.limit;
     if(!LIMIT){
-        // default is 500, if not given
-        LIMIT = 500;
+        // default is 400, if not given
+        LIMIT = 400;
+    }
+
+    if(LIMIT > 400){
+        // Limit should not be greater than 400
+        LIMIT = 400;
     }
 
     var MARKET = request.body.platform;
