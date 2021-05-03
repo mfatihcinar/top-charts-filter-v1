@@ -21,12 +21,7 @@ function createProductHTML(product){
     // In human-like time
     let datePublished = new Date(product.firstReleaseDate);
 
-    let month = datePublished.getMonth(); // get month data
-    let day = datePublished.getDay(); // get day data
-    let year = datePublished.getFullYear(); // get year data
-
-    let dateString = `${year}-${month}-${day}`;
-    // this is the desired format for rendering
+    dateString = datePublished.toLocaleDateString();
 
     return `<div class="container applicationsContainer">
                 <div class="card mb-5">
