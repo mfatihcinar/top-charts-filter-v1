@@ -1,0 +1,32 @@
+/*
+    This file includes calculations for timestamps in miliseconds
+    in select menu
+*/
+
+last week
+
+604800000
+
+last 15 days
+
+1296000000
+
+last month
+
+2629800000
+
+last 2 months
+
+5259600000
+
+last 3 months
+
+7889400000
+
+last 6 months
+
+15778800000
+
+last year
+
+31557600000
