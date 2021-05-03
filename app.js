@@ -34,3 +34,7 @@ app.get("/", (request, response, next) => {
     response.status(OKAY).send("Server is ON! :)");
 }); 
 
+app.get("/charts", (request, response, next) => {
+
+    response.status(200).render("charts");
+})
