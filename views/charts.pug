@@ -1,0 +1,61 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title
+  link(rel='icon', href='https://www.iconpacks.net/icons/2/free-twitter-logo-icon-2429-thumb.png')
+  link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh', crossorigin='anonymous')
+.wrapper
+  .container.siteTitleContainer
+    .titleContentContainer
+      .row
+        .col-4
+          img(src='https://png.pngitem.com/pimgs/s/485-4852982_rocket-icon-transparent-background-clipart-png-download-transparent.png', alt='rocket-charts-logo', width='100%')
+        .col-8
+          br
+          h1.mainTitle Rocket Charts
+  .container.loginContainer
+    h2 Summon Rocket Charts!
+    form#summonChartsForm(method='post', onsubmit='getCharts();')
+      select#selectCountry.form-select(name='Country', aria-label='.form-select-lg example')
+        option(value='US') US
+        option(value='UK') UK
+        option(value='AU') AU
+      select#selectMarket(name='Market')
+        option(value='ios') Apple App Store
+        option(value='android') Google Play Store
+      select#selectType(name='Type')
+        option(value='games') Games
+        option(value='apps') Apps
+      select#timeThreshold(name='TimeThreshold')
+        option(value='3') last week
+        option(value='0.5') last 15 days
+        option(value='1') last month
+        option(value='2') last 2 months
+        option(value='3') last 3 months
+        option(value='3') last 6 months
+        option(value='3') last year
+      select.form-select.form-select-lg.mb-3(aria-label='.form-select-lg example')
+        option(selected='') Open this select menu
+        option(value='1') One
+        option(value='2') Two
+        option(value='3') Three
+      input(type='number', name='limit', placeholder='Limit', required='')
+      input(type='submit', value='Load Charts')
+  .container.applicationsContainer
+    .card.mb-5
+      .productContainer.row.no-gutter
+        .col-3
+          .imageContainer
+            img.src(src='https://static-s.aa-cdn.net/img/ios/1560794979/064ffb7ba772a04d1f9a29d56516bcb8_w80', alt='', width='100%/')
+        .contentContainer
+          a.href(href='/')
+            span.appTitle Monster Center : Idle  Games
+          a.href(href='/')
+            span.appPublisher Adolph Joel
+          span.appRank Rank: 1
+          span.appReleaseDate Release Date: 2021-04-30
+script(src='https://code.jquery.com/jquery-3.6.0.min.js', integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=', crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo', crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', integrity='sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6', crossorigin='anonymous')
