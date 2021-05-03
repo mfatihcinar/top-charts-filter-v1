@@ -76,12 +76,12 @@ var CATEGORY = GAMES;
 // assigned games by default to avoid null, but will be changed
 
 
-router.post("/:choice", (request, response,next) => {
+router.post("/", (request, response,next) => {
 
     // First get the choice, whether the user wants 
     // applications or games
     // it changes everything
-    let CHOICE = request.params.choice;
+    let CHOICE = request.body.type;
     // choice can be games, or apps, otherwise send 400
 
     if(CHOICE === "games"){
