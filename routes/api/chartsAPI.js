@@ -78,6 +78,8 @@ var CATEGORY = GAMES;
 
 router.post("/", (request, response,next) => {
 
+    console.log(request.body);
+
     // First get the choice, whether the user wants 
     // applications or games
     // it changes everything
