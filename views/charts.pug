@@ -31,13 +31,13 @@ head
         option(value='games') Games
         option(value='apps') Apps
       select#timeThreshold.form-select.form-select-lg.mb-3(name='TimeThreshold')
-        option(value='3') last week
-        option(value='0.5') last 15 days
-        option(value='1') last month
-        option(value='2') last 2 months
-        option(value='3') last 3 months
-        option(value='3') last 6 months
-        option(value='3') last year
+        option(value='604800000') last week
+        option(value='1296000000') last 15 days
+        option(value='2629800000') last month
+        option(value='5259600000') last 2 months
+        option(value='7889400000') last 3 months
+        option(value='15778800000') last 6 months
+        option(value='31557600000') last year
       input#limit.mb-3(type='number', name='limit', placeholder='Limit', required='')
       input#loadChartsButton(type='submit', value='Load Charts')
   #applicationsContainer.container.applicationsContainer
